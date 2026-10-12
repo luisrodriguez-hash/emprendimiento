@@ -1,0 +1,716 @@
+/* ========================================
+   HORIZONTE - ESTILOS PRINCIPALES
+   ======================================== */
+
+/* VARIABLES GENERALES */
+:root {
+    --color-fondo: #f7f6f2;
+    --color-texto: #202923;
+    --color-secundario: #69736b;
+    --color-acento: #c8e0b5;
+    --color-oscuro: #17221c;
+    --color-blanco: #ffffff;
+
+    --fuente-titulos: 'Playfair Display', serif;
+    --fuente-texto: 'DM Sans', sans-serif;
+
+    --ancho-contenedor: 1200px;
+}
+
+/* REINICIO GENERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 85px;
+}
+
+body {
+    font-family: var(--fuente-texto);
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.7;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.container {
+    width: min(90%, var(--ancho-contenedor));
+    margin: 0 auto;
+}
+
+.section-padding {
+    padding: 110px 0;
+}
+
+section[id],
+footer[id] {
+    scroll-margin-top: 80px;
+}
+
+/* ========================================
+   NAVEGACION
+   ======================================== */
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: rgba(247, 246, 242, 0.96);
+    border-bottom: 1px solid rgba(32, 41, 35, 0.08);
+    backdrop-filter: blur(12px);
+}
+
+.navbar {
+    min-height: 78px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+}
+
+.logo {
+    font-size: 29px;
+    font-weight: 700;
+    letter-spacing: -1.8px;
+}
+
+.logo span {
+    color: #79976a;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    list-style: none;
+}
+
+.nav-links a {
+    font-size: 13px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #79976a;
+}
+
+.nav-links .nav-contact {
+    border: 1px solid #c8cec5;
+    padding: 10px 17px;
+    border-radius: 30px;
+}
+
+/* ========================================
+   PORTADA PRINCIPAL
+   ======================================== */
+
+.hero {
+    min-height: 680px;
+    height: min(800px, calc(100svh - 78px));
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background-image: url('https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=2200&q=90');
+    background-size: cover;
+    background-position: center 55%;
+    color: var(--color-blanco);
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(12, 24, 17, 0.78) 0%,
+        rgba(12, 24, 17, 0.42) 48%,
+        rgba(12, 24, 17, 0.05) 100%
+    );
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    padding-top: 40px;
+}
+
+.eyebrow,
+.section-tag {
+    display: block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2.4px;
+    line-height: 1.8;
+}
+
+.eyebrow {
+    color: var(--color-acento);
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    max-width: 780px;
+    font-family: var(--fuente-titulos);
+    font-size: clamp(45px, 7vw, 86px);
+    font-weight: 500;
+    line-height: 1.08;
+    letter-spacing: -2px;
+}
+
+.hero h1 em,
+h2 em {
+    font-weight: 500;
+    color: #9dbd8a;
+}
+
+.hero-content > p {
+    max-width: 480px;
+    margin: 25px 0 35px;
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 15px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+    min-height: 52px;
+    padding: 0 24px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: 700;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+.btn-light {
+    background-color: var(--color-blanco);
+    color: var(--color-texto);
+}
+
+.btn-light:hover {
+    background-color: var(--color-acento);
+}
+
+.btn span {
+    font-size: 17px;
+}
+
+.hero-caption {
+    position: absolute;
+    top: 390px;
+    right: 0;
+    display: flex;
+    gap: 22px;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 9px;
+    letter-spacing: 1.5px;
+}
+
+/* ========================================
+   INTRODUCCION
+   ======================================== */
+
+.intro {
+    background-color: var(--color-fondo);
+}
+
+.intro-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 100px;
+    align-items: end;
+}
+
+.section-tag {
+    color: #778b70;
+    margin-bottom: 22px;
+}
+
+.intro h2,
+.section-heading h2,
+.footer-contact h2 {
+    font-family: var(--fuente-titulos);
+    font-size: clamp(34px, 4vw, 52px);
+    font-weight: 500;
+    line-height: 1.22;
+    letter-spacing: -1px;
+}
+
+.intro h2 em,
+.section-heading h2 em {
+    color: #7c9970;
+}
+
+.intro-text p {
+    color: var(--color-secundario);
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+.text-link {
+    display: inline-flex;
+    gap: 14px;
+    align-items: center;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #9caf92;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.text-link span {
+    font-size: 16px;
+    transition: transform 0.3s ease;
+}
+
+.text-link:hover span {
+    transform: translate(3px, -3px);
+}
+
+/* ========================================
+   GALERIA DE DESTINOS
+   ======================================== */
+
+.destinations {
+    background-color: #eeeee7;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 40px;
+    margin-bottom: 45px;
+}
+
+.section-heading h2 {
+    max-width: 600px;
+}
+
+.section-heading > p {
+    max-width: 290px;
+    color: var(--color-secundario);
+    font-size: 13px;
+    padding-bottom: 7px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: 350px;
+    gap: 20px;
+}
+
+.destination-card {
+    position: relative;
+    overflow: hidden;
+    background-color: #d8ddd3;
+    border-radius: 5px;
+    isolation: isolate;
+}
+
+.destination-card img {
+    position: absolute;
+    inset: 0;
+    transition: transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.destination-card:hover img {
+    transform: scale(1.07);
+}
+
+.card-large {
+    grid-row: span 2;
+}
+
+.card-wide {
+    grid-column: span 2;
+}
+
+.card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        0deg,
+        rgba(9, 19, 13, 0.83) 0%,
+        rgba(9, 19, 13, 0.2) 48%,
+        rgba(9, 19, 13, 0.02) 100%
+    );
+    transition: background-color 0.3s ease;
+}
+
+.destination-card:hover .card-overlay {
+    background-color: rgba(9, 19, 13, 0.08);
+}
+
+.card-content {
+    position: absolute;
+    right: 28px;
+    bottom: 28px;
+    left: 28px;
+    color: var(--color-blanco);
+}
+
+.card-number {
+    display: block;
+    margin-bottom: 12px;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #d6e8cb;
+}
+
+.card-content h3 {
+    font-family: var(--fuente-titulos);
+    font-size: clamp(25px, 3vw, 35px);
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.card-content p {
+    margin-top: 9px;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 12px;
+}
+
+/* ========================================
+   FRASE INSPIRADORA
+   ======================================== */
+
+.quote-section {
+    position: relative;
+    overflow: hidden;
+    padding: 125px 0;
+    background-image: url('https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=2000&q=85');
+    background-size: cover;
+    background-position: center 48%;
+    color: var(--color-blanco);
+}
+
+.quote-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(14, 26, 18, 0.72);
+}
+
+.quote-content {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    text-align: center;
+}
+
+.quote-content .section-tag {
+    color: var(--color-acento);
+}
+
+.quote-content h2 {
+    margin: 0 auto;
+    font-family: var(--fuente-titulos);
+    font-size: clamp(35px, 5vw, 58px);
+    font-weight: 500;
+    line-height: 1.3;
+    letter-spacing: -0.8px;
+}
+
+.quote-content h2 em {
+    display: block;
+    margin-top: 10px;
+}
+
+.quote-content > p {
+    margin: 25px 0 30px;
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 13px;
+}
+
+/* ========================================
+   PIE DE PAGINA
+   ======================================== */
+
+.footer {
+    padding-top: 75px;
+    background-color: var(--color-oscuro);
+    color: var(--color-blanco);
+}
+
+.footer-top {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 80px;
+    padding-bottom: 65px;
+}
+
+.logo-footer {
+    display: inline-block;
+    margin-bottom: 17px;
+}
+
+.footer-brand > p {
+    color: #aab5ac;
+    font-size: 12px;
+}
+
+.footer-contact .section-tag {
+    color: var(--color-acento);
+}
+
+.footer-contact h2 {
+    max-width: 500px;
+    margin-bottom: 27px;
+    font-size: clamp(30px, 4vw, 43px);
+}
+
+.footer-contact h2 em {
+    display: block;
+}
+
+.btn-whatsapp {
+    background-color: #25d366;
+    color: #102b1a;
+}
+
+.btn-whatsapp:hover {
+    background-color: #6de49a;
+}
+
+.whatsapp-icon {
+    font-size: 19px;
+}
+
+.footer-bottom {
+    min-height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    color: #aab5ac;
+    font-size: 10px;
+}
+
+.footer-bottom a {
+    transition: color 0.3s ease;
+}
+
+.footer-bottom a:hover {
+    color: var(--color-acento);
+}
+
+.footer-motto {
+    color: var(--color-acento);
+    font-style: italic;
+}
+
+/* ========================================
+   ADAPTACION A TABLETAS
+   ======================================== */
+
+@media (max-width: 900px) {
+
+    .section-padding {
+        padding: 80px 0;
+    }
+
+    .intro-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .intro h2 {
+        max-width: 650px;
+    }
+
+    .section-heading {
+        align-items: start;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .gallery {
+        grid-auto-rows: 300px;
+        gap: 14px;
+    }
+
+    .footer-top {
+        grid-template-columns: 1fr 1.5fr;
+        gap: 40px;
+    }
+
+    .hero-caption {
+        top: auto;
+        bottom: -100px;
+    }
+}
+
+/* ========================================
+   ADAPTACION A CELULARES
+   ======================================== */
+
+@media (max-width: 600px) {
+
+    .container {
+        width: 90%;
+    }
+
+    .section-padding {
+        padding: 65px 0;
+    }
+
+    .navbar {
+        min-height: 70px;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        padding: 12px 0;
+    }
+
+    .logo {
+        font-size: 25px;
+    }
+
+    .nav-links {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 8px 18px;
+    }
+
+    .nav-links a {
+        font-size: 11px;
+    }
+
+    .nav-links .nav-contact {
+        padding: 4px 10px;
+    }
+
+    .hero {
+        min-height: 610px;
+        height: calc(90svh - 70px);
+        background-position: 58% center;
+    }
+
+    .hero-overlay {
+        background: linear-gradient(
+            90deg,
+            rgba(12, 24, 17, 0.75),
+            rgba(12, 24, 17, 0.28)
+        );
+    }
+
+    .hero-content {
+        padding-top: 0;
+    }
+
+    .hero h1 {
+        font-size: clamp(42px, 11vw, 60px);
+        letter-spacing: -1.5px;
+    }
+
+    .hero-content > p {
+        max-width: 350px;
+        font-size: 13px;
+    }
+
+    .hero-caption {
+        display: none;
+    }
+
+    .intro h2,
+    .section-heading h2 {
+        font-size: 37px;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 320px;
+        gap: 14px;
+    }
+
+    .card-large,
+    .card-wide {
+        grid-row: auto;
+        grid-column: auto;
+    }
+
+    .card-content {
+        right: 20px;
+        bottom: 22px;
+        left: 20px;
+    }
+
+    .card-content h3 {
+        font-size: 30px;
+    }
+
+    .quote-section {
+        padding: 85px 0;
+    }
+
+    .quote-content h2 {
+        font-size: 36px;
+    }
+
+    .footer {
+        padding-top: 55px;
+    }
+
+    .footer-top {
+        grid-template-columns: 1fr;
+        gap: 45px;
+        padding-bottom: 45px;
+    }
+
+    .footer-contact h2 {
+        font-size: 35px;
+    }
+
+    .footer-bottom {
+        justify-content: center;
+        flex-direction: column;
+        padding: 22px 0;
+        text-align: center;
+    }
+
+    .btn-whatsapp {
+        gap: 12px;
+        padding: 0 16px;
+        font-size: 11px;
+    }
+}
+
+/* RESPETO A LA PREFERENCIA DE MENOS MOVIMIENTO */
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}
